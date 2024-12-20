@@ -999,7 +999,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="289" parent="1" name="javadatabase">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-12-09.12:26:42</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-12-12.11:16:40</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="290" parent="1" name="mysql">
@@ -1036,5 +1036,37 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
+    <table id="299" parent="289" name="users">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="300" parent="299" name="id">
+      <AutoIncrement>2</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>bigint|0s</StoredType>
+    </column>
+    <column id="301" parent="299" name="name">
+      <Position>2</Position>
+      <StoredType>varchar(30)|0s</StoredType>
+    </column>
+    <column id="302" parent="299" name="lastName">
+      <Position>3</Position>
+      <StoredType>varchar(30)|0s</StoredType>
+    </column>
+    <column id="303" parent="299" name="age">
+      <Position>4</Position>
+      <StoredType>tinyint|0s</StoredType>
+    </column>
+    <index id="304" parent="299" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="305" parent="299" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
   </database-model>
 </dataSource>
