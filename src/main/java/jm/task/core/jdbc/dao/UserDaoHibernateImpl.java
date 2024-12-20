@@ -8,7 +8,7 @@ import org.hibernate.Transaction;
 import java.util.List;
 
 public class UserDaoHibernateImpl implements UserDao {
-    //test
+    //test1
     public UserDaoHibernateImpl() {
     }
 
