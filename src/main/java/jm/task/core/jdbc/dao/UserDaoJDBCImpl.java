@@ -29,8 +29,7 @@ public class UserDaoJDBCImpl implements UserDao {
             statement.executeUpdate(sqlCreateTable);
             System.out.println("Таблица 'users' создана или уже существует!");
         } catch (SQLException e) {
-            System.err.println(e.getMessage());
-            //throw new RuntimeException("Ошибка при создании таблицы 'users': " + e.getMessage(), e);
+            System.err.println("Исключение при создании таблицы: " + e.getMessage());
         }
     }
 
@@ -39,9 +38,8 @@ public class UserDaoJDBCImpl implements UserDao {
         try(Statement statement = connection.createStatement())    {
 
             statement.executeUpdate(sqlDropTable);
-        } catch (Exception e) {
-            System.err.println(e.getMessage());
-            //throw new RuntimeException("Таблица вероятно уже отсутствует и не может быть удалена!", e);
+        } catch (SQLException e) {
+            System.err.println("Исключение при удалении таблицы: " + e.getMessage());
         }
     }
 
@@ -59,9 +57,8 @@ public class UserDaoJDBCImpl implements UserDao {
             } else {
                 System.out.println("Не удалось создать пользователя " + name + " " + lastName);
             }
-        } catch (Exception e) {
-            System.err.println(e.getMessage());
-            //throw new RuntimeException("Ошибка создания пользователя", e);
+        } catch (SQLException e) {
+            System.err.println("Ошибка создания пользователя: " + e.getMessage());
         }
     }
 
@@ -76,9 +73,8 @@ public class UserDaoJDBCImpl implements UserDao {
             } else {
                 System.out.println("Пользователь с ID " + id + " не найден!");
             }
-        } catch (Exception e) {
-            System.err.println(e.getMessage());
-            //throw new RuntimeException("Ошибка удаления пользователя", e);
+        } catch (SQLException e) {
+            System.err.println("Ошибка удаления пользователя" + e.getMessage());
         }
     }
 
@@ -97,8 +93,7 @@ public class UserDaoJDBCImpl implements UserDao {
                 userList.add(user);
             }
         } catch (SQLException e) {
-            System.err.println(e.getMessage());
-            //throw new RuntimeException("Ошибка удаления пользователя", e);
+            System.err.println("Ошибка удаления пользователя" + e.getMessage());
         }
         return userList;
     }
@@ -113,9 +108,8 @@ public class UserDaoJDBCImpl implements UserDao {
             } else {
                 System.out.println("Не удалось очистить таблицу пользователей.");
             }
-        } catch (Exception e) {
-            System.err.println(e.getMessage());
-            //throw new RuntimeException("Ошибка очистки таблицы пользователей", e);
+        } catch (SQLException e) {
+            System.err.println("Ошибка очистки таблицы пользователей" + e.getMessage());
         }
     }
 }
